@@ -1,4 +1,5 @@
 require('dotenv').config();
+const http = require('http');
 const { run, setupAccount } = require('./index');
 const { sleep } = require('./helper');
 const chalk = require('chalk');
@@ -93,3 +94,8 @@ async function startSingle() {
         await startSingle();
     }
 })()
+
+http.createServer((req, res) => {
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end('Hello World\n');
+}).listen(process.env.PORT || 3000);
