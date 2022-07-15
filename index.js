@@ -342,7 +342,9 @@ async function startBotPlayMatch(page, browser) {
         await page.waitForTimeout(8000);
         await closePopups(page);
         await closePopups(page);
-        await clickOnElement(page, '#bh_wild_toggle', 1000, 2000);
+        if (!process.env.PLAY_MODERN) {
+            await clickOnElement(page, '#bh_wild_toggle', 1000, 2000);
+        }
 
         const ecr = await checkEcr(page);
         if (ecr === undefined) throw new Error('Fail to get ECR.')
