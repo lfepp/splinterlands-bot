@@ -52,6 +52,7 @@ If you want the bot to play only one color (when it's possible), use the variabl
 If you want the bot to try to skip specific quest types you can include multiple quest in the variable `SKIP_QUEST` separated by the comma (`SKIP_QUEST=life,snipe,neutral`). whenever it's possible, the bot will click to ask for a new one. Remember you can only ask for a new one once based on the game rules.
 If you want the bot to prioritize teams that uses delegated cards, set the variable `DELEGATED_CARDS_PRIORITY`  equal to `true`.
 To avoid to sue the API solution and rely only on your local history json file created as per instructions below (Local History backup), you can set the variable `FORCE_LOCAL_HISTORY=true`.
+By default, the bot will play in the Wild format. Set `PLAY_MODERN=true` to play in the Modern format.
 
 Example:
 
